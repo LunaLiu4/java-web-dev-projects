@@ -2,6 +2,7 @@ package org.launchcode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class CountingCharacters {
     public static void main(String[] args) {
@@ -11,21 +12,14 @@ public class CountingCharacters {
                 " can be factored allowing that side of the equation to equal zero." +
                 " Once you’ve done that, it’s pretty straightforward from there.";
         char[] charactersInString = myString.toCharArray();
+        GetOutput.getHashMap(charactersInString);
 
-        HashMap<Character, Integer> output = new HashMap<>();
-        int count = 0;
-
-        for(char character: charactersInString){
-            if(output.containsKey(character)){
-                count = output.get(character) + 1;
-            }else {
-                count = 1;
-            }
-            output.put(character,count);
-        }
-
-        for (Map.Entry<Character, Integer> character : output.entrySet()) {
-            System.out.println(character.getKey() + ": " +character.getValue());
-        }
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter your string: ");
+        String text = input.nextLine();
+        text = text.toLowerCase().replaceAll("[^a-zA-Z]", "");
+        charactersInString = text.toCharArray();
+        GetOutput.getHashMap(charactersInString);
     }
+
 }
