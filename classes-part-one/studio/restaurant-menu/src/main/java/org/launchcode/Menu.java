@@ -3,30 +3,34 @@ package org.launchcode;
 import java.time.LocalDate;
 import java.util.ArrayList;
 //import java.util.Date;
-import java.time.LocalDate;
 
 
 public class Menu {
     private LocalDate lastUpdated;
-    private ArrayList<MenuItem> items = new ArrayList<>();
+    private ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     public Menu(LocalDate d, ArrayList<MenuItem> i) {
         this.lastUpdated = d;
-        this.items = i;
+        this.menuItems = i;
     }
     public Menu(){
         this.lastUpdated = LocalDate.now();
     }
     public void addMenuItem (MenuItem item){
-        this.items.add(item);
+        this.menuItems.add(item);
         this.lastUpdated = LocalDate.now();
     }
+    public  void removeMenuItem (MenuItem item){
+        this.menuItems.remove(item);
+        this.lastUpdated = LocalDate.now();
+    }
+
     public void setLastUpdated(LocalDate lastUpdated) {
         this.lastUpdated = lastUpdated;
     }
 
     public void setItems(ArrayList<MenuItem> items) {
-        this.items = items;
+        this.menuItems = items;
     }
 
     public LocalDate getLastUpdated() {
@@ -34,6 +38,11 @@ public class Menu {
     }
 
     public ArrayList<MenuItem> getItems() {
-        return items;
+        return menuItems;
     }
+
+//    public void printMenu(){
+//        System.out.println(this.menuItems);
+//    }
+
 }
