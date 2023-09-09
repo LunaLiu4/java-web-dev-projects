@@ -1,7 +1,5 @@
 package org.launchcode;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class CountingCharacters {
@@ -12,14 +10,18 @@ public class CountingCharacters {
                 " can be factored allowing that side of the equation to equal zero." +
                 " Once you’ve done that, it’s pretty straightforward from there.";
         char[] charactersInString = myString.toCharArray();
+//        GetOutput output = new GetOutput();
+//        output.getHashMap(charactersInString);
         GetOutput.getHashMap(charactersInString);
 
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your string: ");
         String text = input.nextLine();
+//        Character.toLowerCase(letter);
         text = text.toLowerCase().replaceAll("[^a-zA-Z]", "");
         charactersInString = text.toCharArray();
         GetOutput.getHashMap(charactersInString);
+        input.close();
     }
 
 }

@@ -6,5 +6,6 @@ public class HelloMethods {
         String message = Message.getMessage("cn");
         System.out.println(message);
     }
+   
 
 }
