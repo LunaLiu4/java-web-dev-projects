@@ -12,12 +12,13 @@ class BalancedBracketsTest {
     }
     @Test
     //1
-    public void onlyBracketsReturnsTrue() {
+    public void isBalanceWithTwoBrackets() {
+
         assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
     }
     //2
     @Test
-    public void notSquareBracketsReturnsFalse(){
+    public void failsIfBracketsBackwards(){
         assertFalse(BalancedBrackets.hasBalancedBrackets("]["));
     }
     //3
@@ -52,7 +53,7 @@ class BalancedBracketsTest {
     }
     //9
     @Test
-    public void onlyMultiplySquareBracketsReturnsTrue(){
+    public void isBalancedWithMultiplyBrackets(){
         assertTrue(BalancedBrackets.hasBalancedBrackets("[[[]]]"));
     }
     //10
@@ -62,12 +63,13 @@ class BalancedBracketsTest {
     }
     //11
     @Test
-    public void moreOpenningBracketsReturnsFalse(){
+    public void failsIfNotBalanced(){
         assertFalse(BalancedBrackets.hasBalancedBrackets("[[[]]"));
     }
     //12
     @Test
     public void moreClosingBracketsReturnsFalse(){
+
         assertFalse(BalancedBrackets.hasBalancedBrackets("[[]]]]"));
     }
 }
